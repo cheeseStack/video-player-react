@@ -12,10 +12,14 @@ const VIDEOS = {
 function App() {
 	const [src, setSrc] = useState(VIDEOS.fast);
 
+  const onSelectVideoHandler = newSpeed => {
+    setSrc = VIDEOS.newSpeed
+  }
+
 	return (
       <div>
         <h1>Video Player</h1>
-        <Menu />
+        <Menu onSelectVideo={onSelectVideoHandler}/>
         <Video src={src}/>
       </div>
     );
