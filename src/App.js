@@ -1,3 +1,5 @@
+// https://www.codecademy.com/journeys/full-stack-engineer/paths/fscj-22-front-end-development/tracks/fscj-22-react-part-ii/modules/wdcp-22-stateless-components-from-stateful-components-4e9c9fb5-0711-4b6d-82b5-1719f044b355/projects/video-player
+
 import React, { useState } from 'react';
 import Video from './Video';
 import Menu from './Menu';
@@ -12,9 +14,8 @@ const VIDEOS = {
 function App() {
 	const [src, setSrc] = useState(VIDEOS.fast);
 
-  const onSelectVideoHandler = newSpeed => {
-    setSrc = VIDEOS.newSpeed
-  }
+  // part 3.
+  const onSelectVideoHandler = newSpeed => setSrc(VIDEOS[newSpeed]);
 
 	return (
       <div>
@@ -26,6 +27,3 @@ function App() {
 };
 
 export default App
-// const container = document.getElementById("app");
-// const root = createRoot(container);
-// root.render(<App />);

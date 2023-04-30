@@ -1,14 +1,20 @@
-import React from "react";
+import React from 'react'
 
-function Menu() {
-	return (
-		  <form>
-			  <input type="radio" name="src" value="fast"/> fast
-			  <input type="radio" name="src" value="slow" /> slow
-			  <input type="radio" name="src" value="cute" /> cute
-			  <input type="radio" name="src" value="eek" /> eek
-		  </form>
-		);
-};
+function Menu(props) {
 
-export default Menu;
+    function clickHandler(event){
+      let speed = event.target.value;
+      props.onSelectVideo(speed)
+    };
+  
+      return (
+            <form onClick={clickHandler}>
+                <input type="radio" name="src" value="fast"/> fast
+                <input type="radio" name="src" value="slow" /> slow
+                <input type="radio" name="src" value="cute" /> cute
+                <input type="radio" name="src" value="eek" /> eek
+            </form>
+          );
+  };
+  
+  export default Menu;
